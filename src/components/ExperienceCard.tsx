@@ -30,7 +30,9 @@ export function ExperienceCard({
 
       <div className="experience-body relative md:pl-2">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-5">
-          <h3 className="toon-heading text-4xl leading-none sm:text-5xl md:text-6xl">{company}</h3>
+          <h3 className="toon-heading text-4xl leading-none sm:text-5xl md:text-6xl">
+            {company}
+          </h3>
           <p className="toon-label pb-1 text-xs sm:text-sm">{role}</p>
         </div>
 
@@ -45,7 +47,10 @@ export function ExperienceCard({
               className="experience-bullet flex items-start gap-3 font-mono text-sm font-semibold leading-6 text-muted sm:text-base sm:leading-7"
               style={{ "--bullet-index": bulletIndex } as CSSProperties}
             >
-              <span className="mt-1 text-base leading-none text-black" aria-hidden="true">
+              <span
+                className="mt-1 text-base leading-none text-black"
+                aria-hidden="true"
+              >
                 &rarr;
               </span>
               {bullet}
