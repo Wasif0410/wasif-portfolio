@@ -32,7 +32,7 @@ export function AboutDesktopSidebar({ children }: AboutDesktopSidebarProps) {
   if (!isDesktop) return null;
 
   return (
-    <aside className="about-section-right hidden lg:flex">
+    <aside className="about-section-right">
       <div className="about-section-sidebar">{children}</div>
     </aside>
   );

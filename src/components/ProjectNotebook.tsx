@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GitHubIcon } from "@/components/BrandIcons";
 
@@ -70,12 +71,14 @@ function ProjectPageContent({
 
       <div className="project-notebook-preview">
         <div className="project-notebook-preview-frame">
-          <img
+          <Image
             src={project.image}
             alt={project.imageAlt}
+            width={320}
+            height={240}
             className="project-notebook-preview-img"
             loading="eager"
-            decoding="async"
+            unoptimized
           />
         </div>
       </div>

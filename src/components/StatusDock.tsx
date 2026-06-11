@@ -7,8 +7,8 @@ import { ToonPill } from "@/components/ToonPill";
 import { links, profile } from "@/data/portfolio";
 
 const dockLinks = [
-  { label: "LinkedIn", href: links.linkedin, Icon: LinkedInIcon, external: true, brand: true },
-  { label: "GitHub", href: links.github, Icon: GitHubIcon, external: true, brand: true },
+  { label: "LinkedIn", href: links.linkedin, Icon: LinkedInIcon, external: true },
+  { label: "GitHub", href: links.github, Icon: GitHubIcon, external: true },
 ] as const;
 
 export function StatusDock() {
@@ -16,6 +16,11 @@ export function StatusDock() {
   const [emailOpen, setEmailOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const popoverRef = useRef<HTMLDivElement>(null);
+
+  const closeEmail = useCallback(() => {
+    setEmailOpen(false);
+    setCopied(false);
+  }, []);
 
   useEffect(() => {
     let frame = 0;
@@ -44,18 +49,12 @@ export function StatusDock() {
     if (!emailOpen) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setEmailOpen(false);
+      if (event.key === "Escape") closeEmail();
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [emailOpen]);
-
-  useEffect(() => {
-    if (!emailOpen) {
-      setCopied(false);
-    }
-  }, [emailOpen]);
+  }, [closeEmail, emailOpen]);
 
   const copyEmail = useCallback(async () => {
     try {
@@ -67,6 +66,15 @@ export function StatusDock() {
     }
   }, []);
 
+  const toggleEmail = useCallback(() => {
+    if (emailOpen) {
+      closeEmail();
+      return;
+    }
+
+    setEmailOpen(true);
+  }, [closeEmail, emailOpen]);
+
   return (
     <>
       {emailOpen ? (
@@ -74,7 +82,7 @@ export function StatusDock() {
           type="button"
           aria-label="Close email popup"
           className="email-popover-backdrop"
-          onClick={() => setEmailOpen(false)}
+          onClick={closeEmail}
         />
       ) : null}
 
@@ -92,7 +100,7 @@ export function StatusDock() {
               type="button"
               aria-label="Close"
               className="email-popover-close"
-              onClick={() => setEmailOpen(false)}
+              onClick={closeEmail}
             >
               <X aria-hidden="true" className="h-4 w-4" strokeWidth={2.4} />
             </button>
@@ -131,7 +139,7 @@ export function StatusDock() {
             <span className="min-w-[2rem] whitespace-nowrap text-center">{scrollPercent}%</span>
             <span className="toon-divider hidden h-5 sm:block" aria-hidden="true" />
             <span className="flex items-center justify-center gap-3">
-              {dockLinks.map(({ label, href, Icon, external, brand }) => (
+              {dockLinks.map(({ label, href, Icon, external }) => (
                 <a
                   key={label}
                   href={href}
@@ -151,7 +159,7 @@ export function StatusDock() {
                 aria-expanded={emailOpen}
                 aria-controls="email-popover-title"
                 className={`toon-icon-btn inline-flex ${emailOpen ? "is-active" : ""}`}
-                onClick={() => setEmailOpen((open) => !open)}
+                onClick={toggleEmail}
               >
                 <Mail aria-hidden="true" className="h-[1.125rem] w-[1.125rem]" strokeWidth={2.2} />
               </button>

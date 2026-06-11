@@ -1969,11 +1969,6 @@ body {
   .about-section-interests {
     grid-area: interests;
   }
-
-  .about-section-right,
-  .about-notebook-card--quick-read {
-    display: none !important;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -2903,9 +2898,40 @@ body {
 
 /* ── Experience sequential sketch reveal ── */
 
+.experience-list {
+  width: 100%;
+  min-width: 0;
+}
+
 .experience-card {
+  width: 100%;
+  min-width: 0;
   opacity: 0;
   transform: translate(10px, 14px) rotate(0.6deg);
+}
+
+.experience-logo-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 11rem;
+  aspect-ratio: 1;
+  padding: 0.85rem;
+}
+
+.experience-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .experience-logo-frame {
+    max-width: 7.5rem;
+    padding: 0.65rem;
+  }
 }
 
 .experience-card.is-visible {
@@ -2913,14 +2939,9 @@ body {
   animation-delay: calc(var(--experience-index, 0) * 240ms);
 }
 
-.experience-card.is-visible .experience-year {
-  animation: experience-year-stamp 640ms cubic-bezier(0.34, 1.15, 0.64, 1) both;
+.experience-card.is-visible .experience-logo-frame {
+  animation: experience-logo-in 560ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
   animation-delay: calc(var(--experience-index, 0) * 240ms + 140ms);
-}
-
-.experience-card.is-visible .experience-body {
-  animation: experience-body-in 620ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  animation-delay: calc(var(--experience-index, 0) * 240ms + 220ms);
 }
 
 .experience-card.is-visible .experience-bullet {
@@ -2940,35 +2961,15 @@ body {
   }
 }
 
-@keyframes experience-year-stamp {
-  0% {
-    opacity: 0;
-    transform: scale(1.12) rotate(-2deg);
-    color: rgba(0, 0, 0, 0);
-  }
-
-  55% {
-    opacity: 1;
-    transform: scale(0.97) rotate(0.4deg);
-    color: rgba(0, 0, 0, 0.12);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-    color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-@keyframes experience-body-in {
+@keyframes experience-logo-in {
   from {
     opacity: 0;
-    transform: translateX(14px);
+    transform: translateY(8px) rotate(-1.5deg);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0) rotate(0deg);
   }
 }
 

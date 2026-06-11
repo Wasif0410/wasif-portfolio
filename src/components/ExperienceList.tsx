@@ -6,6 +6,7 @@ import { ExperienceCard } from "@/components/ExperienceCard";
 type Experience = {
   year: string;
   company: string;
+  logo: string;
   role: string;
   description: string;
   bullets: string[];

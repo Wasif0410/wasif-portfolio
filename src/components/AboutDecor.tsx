@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type SvgProps = {
   className?: string;
 };
@@ -157,12 +159,15 @@ export function AboutInterestGlyph({ icon, className }: { icon: AboutInterestIco
 
 export function SketchFishDrawing({ className }: SvgProps) {
   return (
-    <img
+    <Image
       src="/fish-svgrepo-com.svg"
       alt=""
+      width={136}
+      height={136}
       className={className}
       aria-hidden="true"
       draggable={false}
+      unoptimized
     />
   );
 }

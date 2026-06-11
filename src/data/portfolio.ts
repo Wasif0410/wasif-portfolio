@@ -84,6 +84,7 @@ export const experiences = [
   {
     year: "2026",
     company: "Dayforce",
+    logo: "/company-logos/dayforce.png",
     role: "Product & AI Developer Intern",
     description:
       "Working on GenAI evaluation, RAG/MCP agent workflows, multilingual LLM testing, product usage analytics, and AI feature experimentation.",
@@ -97,6 +98,7 @@ export const experiences = [
   {
     year: "2025",
     company: "IQonsulting",
+    logo: "/company-logos/iqonsulting_incorporated_logo.jpg",
     role: "Applied AI Developer Intern",
     description:
       "Built healthcare-focused AI automation prototypes for Healthlytics.ai using LLMs, text-to-speech, speech tools, and computer vision workflows.",
@@ -110,6 +112,7 @@ export const experiences = [
   {
     year: "2024",
     company: "Saige",
+    logo: "/company-logos/realsaige_logo.jpg",
     role: "Software Developer Intern (ML/AI)",
     description:
       "Developed AI-powered backend features and agent workflows using LangChain, vector databases, and full-stack tooling.",
@@ -123,6 +126,7 @@ export const experiences = [
   {
     year: "2024",
     company: "RCMP",
+    logo: "/company-logos/royal-canadian-mounted-police-logo.jpg",
     role: "Junior Programmer Analyst",
     description:
       "Improved internal software systems, automated workflows, and optimized database-backed applications.",
