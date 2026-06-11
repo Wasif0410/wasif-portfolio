@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="Smart Full Stack Gym Manager preview">
+  <rect width="800" height="480" fill="#f7f7f2"/>
+  <rect x="24" y="24" width="752" height="432" fill="#fff" stroke="#000" stroke-width="6"/>
+  <rect x="48" y="48" width="180" height="384" fill="#efefe8" stroke="#000" stroke-width="4"/>
+  <rect x="68" y="78" width="140" height="28" fill="#fff" stroke="#000" stroke-width="3"/>
+  <rect x="68" y="120" width="140" height="28" fill="#ddd" stroke="#000" stroke-width="3"/>
+  <rect x="68" y="162" width="140" height="28" fill="#fff" stroke="#000" stroke-width="3"/>
+  <rect x="68" y="204" width="140" height="28" fill="#fff" stroke="#000" stroke-width="3"/>
+  <text x="252" y="78" fill="#000" font-family="monospace" font-size="24" font-weight="900">MEMBER DASHBOARD</text>
+  <rect x="252" y="98" width="220" height="100" fill="#fff" stroke="#000" stroke-width="4"/>
+  <text x="272" y="140" fill="#000" font-family="monospace" font-size="18" font-weight="800">ACTIVE MEMBERS</text>
+  <text x="272" y="178" fill="#000" font-family="monospace" font-size="34" font-weight="900">1,000+</text>
+  <rect x="492" y="98" width="236" height="100" fill="#fff" stroke="#000" stroke-width="4"/>
+  <text x="512" y="140" fill="#000" font-family="monospace" font-size="18" font-weight="800">DAILY LOGINS</text>
+  <text x="512" y="178" fill="#000" font-family="monospace" font-size="34" font-weight="900">SECURE</text>
+  <rect x="252" y="220" width="476" height="212" fill="#efefe8" stroke="#000" stroke-width="4"/>
+  <rect x="280" y="320" width="80" height="72" fill="#fff" stroke="#000" stroke-width="3"/>
+  <rect x="380" y="280" width="80" height="112" fill="#fff" stroke="#000" stroke-width="3"/>
+  <rect x="480" y="300" width="80" height="92" fill="#ddd" stroke="#000" stroke-width="3"/>
+  <rect x="580" y="260" width="80" height="132" fill="#fff" stroke="#000" stroke-width="3"/>
+  <text x="272" y="252" fill="#555" font-family="monospace" font-size="18" font-weight="700">ADMIN ANALYTICS</text>
+</svg>

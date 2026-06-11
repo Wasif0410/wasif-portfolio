@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="MiniSpotify music store dashboard">
+  <rect width="800" height="480" fill="#f7f7f2"/>
+  <rect x="24" y="24" width="752" height="432" fill="#fff" stroke="#000" stroke-width="6"/>
+  <text x="48" y="64" fill="#000" font-family="monospace" font-size="22" font-weight="900">MINISPOTIFY</text>
+  <text x="48" y="88" fill="#555" font-family="monospace" font-size="14" font-weight="700">YOUR LIBRARY</text>
+  <rect x="48" y="104" width="160" height="72" fill="#fff" stroke="#000" stroke-width="3"/>
+  <text x="64" y="132" fill="#555" font-family="monospace" font-size="11" font-weight="700">SONGS</text>
+  <text x="64" y="158" fill="#000" font-family="monospace" font-size="28" font-weight="900">248</text>
+  <rect x="224" y="104" width="160" height="72" fill="#fff" stroke="#000" stroke-width="3"/>
+  <text x="240" y="132" fill="#555" font-family="monospace" font-size="11" font-weight="700">PLAYLISTS</text>
+  <text x="240" y="158" fill="#000" font-family="monospace" font-size="28" font-weight="900">12</text>
+  <rect x="400" y="104" width="160" height="72" fill="#ddd" stroke="#000" stroke-width="3"/>
+  <text x="416" y="132" fill="#555" font-family="monospace" font-size="11" font-weight="700">DOWNLOADS</text>
+  <text x="416" y="158" fill="#000" font-family="monospace" font-size="28" font-weight="900">89</text>
+  <rect x="576" y="104" width="176" height="72" fill="#fff" stroke="#000" stroke-width="3"/>
+  <text x="592" y="132" fill="#555" font-family="monospace" font-size="11" font-weight="700">NOW PLAYING</text>
+  <text x="592" y="158" fill="#000" font-family="monospace" font-size="14" font-weight="800">Midnight Transit</text>
+  <rect x="48" y="192" width="340" height="220" fill="#efefe8" stroke="#000" stroke-width="4"/>
+  <circle cx="148" cy="292" r="44" fill="#fff" stroke="#000" stroke-width="4"/>
+  <polygon points="136,272 136,312 168,292" fill="#000"/>
+  <text x="220" y="268" fill="#000" font-family="monospace" font-size="18" font-weight="900">Neon Harbor</text>
+  <text x="220" y="294" fill="#555" font-family="monospace" font-size="13">Indie Pop � 3:34</text>
+  <rect x="220" y="312" width="140" height="10" fill="#fff" stroke="#000" stroke-width="2"/>
+  <rect x="220" y="312" width="88" height="10" fill="#000"/>
+  <rect x="220" y="340" width="72" height="28" fill="#fff" stroke="#000" stroke-width="2" rx="14"/>
+  <text x="232" y="359" fill="#000" font-family="monospace" font-size="11" font-weight="800">PLAY</text>
+  <rect x="304" y="340" width="72" height="28" fill="#fff" stroke="#000" stroke-width="2" rx="14"/>
+  <text x="312" y="359" fill="#000" font-family="monospace" font-size="11" font-weight="800">+ PL</text>
+  <rect x="408" y="192" width="344" height="220" fill="#fff" stroke="#000" stroke-width="4"/>
+  <text x="424" y="220" fill="#555" font-family="monospace" font-size="13" font-weight="700">RECENTLY ADDED</text>
+  <line x1="424" y1="232" x2="736" y2="232" stroke="#000" stroke-width="2"/>
+  <text x="424" y="258" fill="#333" font-family="monospace" font-size="12">Pulse District � DJ Meridian</text>
+  <text x="424" y="284" fill="#333" font-family="monospace" font-size="12">Lagos Sunrise � Amara Okafor</text>
+  <text x="424" y="310" fill="#333" font-family="monospace" font-size="12">Golden Hour Fade � Kai Mendoza</text>
+  <text x="424" y="336" fill="#333" font-family="monospace" font-size="12">Night Shift Loop � DJ Meridian</text>
+  <rect x="424" y="360" width="304" height="36" fill="#efefe8" stroke="#000" stroke-width="3" rx="18"/>
+  <text x="440" y="384" fill="#777" font-family="monospace" font-size="13" font-weight="700">Search title, artist, genre...</text>
+</svg>

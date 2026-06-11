@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="Korean Food Recognition app preview">
+  <rect width="800" height="480" fill="#f7f7f2"/>
+  <rect x="24" y="24" width="752" height="432" fill="#fff" stroke="#000" stroke-width="6"/>
+  <rect x="48" y="48" width="320" height="240" fill="#efefe8" stroke="#000" stroke-width="4"/>
+  <circle cx="120" cy="120" r="42" fill="#ffd966" stroke="#000" stroke-width="4"/>
+  <rect x="170" y="90" width="150" height="24" fill="#ddd" stroke="#000" stroke-width="3"/>
+  <rect x="170" y="130" width="110" height="18" fill="#eee" stroke="#000" stroke-width="3"/>
+  <text x="420" y="110" fill="#000" font-family="monospace" font-size="28" font-weight="700">Korean Dish</text>
+  <text x="420" y="150" fill="#000" font-family="monospace" font-size="42" font-weight="900">BIBIMBAP</text>
+  <text x="420" y="190" fill="#555" font-family="monospace" font-size="20" font-weight="700">Confidence: 91%</text>
+  <rect x="48" y="320" width="704" height="56" fill="#fff" stroke="#000" stroke-width="4" rx="28"/>
+  <text x="400" y="358" text-anchor="middle" fill="#000" font-family="monospace" font-size="22" font-weight="800">UPLOAD / CLASSIFY</text>
+</svg>
