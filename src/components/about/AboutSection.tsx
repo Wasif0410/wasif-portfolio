@@ -1,9 +1,8 @@
 import type { ReactNode } from "react";
 import { aboutContent, type AboutHighlight } from "@/data/portfolio";
-import { AboutHighlightGlyph, AboutInterestGlyph } from "@/components/AboutDecor";
-import { AboutGuessDrawing } from "@/components/AboutGuessDrawing";
-import { AboutDesktopSidebar } from "@/components/AboutDesktopSidebar";
-import { SketchSparkle, SketchTitleUnderline } from "@/components/WritingDecor";
+import { AboutQuickReadSidebar } from "@/components/about/AboutQuickReadSidebar";
+import { AboutHighlightGlyph, AboutInterestGlyph } from "@/components/about/AboutDecor";
+import { SketchSparkle, SketchTitleUnderline } from "@/components/writing/WritingDecor";
 
 const BINDER_HOLES = 5;
 
@@ -72,41 +71,45 @@ function AboutQuickRead({ highlights }: { highlights: AboutHighlight[] }) {
 export function AboutSection() {
   return (
     <div className="about-section">
-      <div className="about-section-layout">
-        <div className="about-section-left">
-          <div className="about-section-main">
-            <AboutHeadline />
+      <div className="about-section-top">
+        <div className="about-section-main">
+          <AboutHeadline />
 
-            <div className="about-section-copy">
-              {aboutContent.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="toon-copy">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          </div>
-
-          <div className="about-section-interests">
-            <AboutNotebookCard label="Interests" className="about-notebook-card--interests">
-              <p className="about-interests-note toon-copy">{aboutContent.interestsNote}</p>
-              <ul className="about-interests-list">
-                {aboutContent.interests.map(({ label, icon }) => (
-                  <li key={label}>
-                    <span className="toon-tag about-interest-tag">
-                      <AboutInterestGlyph icon={icon} className="about-interest-icon" />
-                      {label}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </AboutNotebookCard>
+          <div className="about-section-copy">
+            {aboutContent.paragraphs.map((paragraph) => (
+              <p key={paragraph} className="toon-copy">
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
 
-        <AboutDesktopSidebar>
+        <AboutQuickReadSidebar>
           <AboutQuickRead highlights={aboutContent.highlights} />
-          <AboutGuessDrawing />
-        </AboutDesktopSidebar>
+        </AboutQuickReadSidebar>
+      </div>
+
+      <div className="about-section-divider" aria-hidden="true" />
+
+      <div className="about-section-interests">
+        <div className="about-interests-header">
+          <SketchSparkle className="about-interests-sparkle" />
+          <h4 className="about-interests-title">
+            Interests
+            <SketchTitleUnderline className="about-interests-line" />
+          </h4>
+        </div>
+
+        <ul className="about-interests-list">
+          {aboutContent.interests.map(({ label, icon }) => (
+            <li key={label}>
+              <span className="toon-tag about-interest-tag">
+                <AboutInterestGlyph icon={icon} className="about-interest-icon" />
+                {label}
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

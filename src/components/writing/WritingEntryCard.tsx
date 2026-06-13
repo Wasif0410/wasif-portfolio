@@ -3,7 +3,7 @@ import {
   SketchIndexUnderline,
   SketchTitleUnderline,
   WritingReadLink,
-} from "@/components/WritingDecor";
+} from "@/components/writing/WritingDecor";
 import type { WritingEntry } from "@/data/portfolio";
 
 type WritingEntryCardProps = {

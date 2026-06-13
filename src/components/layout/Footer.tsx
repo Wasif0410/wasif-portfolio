@@ -1,4 +1,4 @@
-import { SketchTitle } from "@/components/SketchTitle";
+import { SketchTitle } from "@/components/ui/SketchTitle";
 
 export function Footer() {
   return (

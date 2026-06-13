@@ -1,14 +1,14 @@
-import { AboutSection } from "@/components/AboutSection";
-import { EducationSection } from "@/components/EducationSection";
-import { ExperienceList } from "@/components/ExperienceList";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { ProjectNotebook } from "@/components/ProjectNotebook";
-import { SectionHeading } from "@/components/SectionHeading";
-import { SiteNav } from "@/components/SiteNav";
-import { SkillsSection } from "@/components/SkillsSection";
-import { StatusDock } from "@/components/StatusDock";
-import { WritingSection } from "@/components/WritingSection";
+import { AboutSection } from "@/components/about/AboutSection";
+import { EducationSection } from "@/components/education/EducationSection";
+import { ExperienceList } from "@/components/experience/ExperienceList";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/hero/Hero";
+import { ProjectNotebook } from "@/components/projects/ProjectNotebook";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SiteNav } from "@/components/layout/SiteNav";
+import { SkillsSection } from "@/components/skills/SkillsSection";
+import { StatusDock } from "@/components/layout/StatusDock";
+import { WritingSection } from "@/components/writing/WritingSection";
 import { educationEntries, experiences, projectNotebooks, skillGroups } from "@/data/portfolio";
 
 export default function Home() {

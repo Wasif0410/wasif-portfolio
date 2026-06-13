@@ -1,6 +1,6 @@
 import { profile } from "@/data/portfolio";
-import { HeroDrawingLayer } from "@/components/HeroDrawingLayer";
-import { SketchTitle } from "@/components/SketchTitle";
+import { HeroDrawingLayer } from "@/components/hero/HeroDrawingLayer";
+import { SketchTitle } from "@/components/ui/SketchTitle";
 
 const [firstName, lastName] = profile.name.split(" ");
 

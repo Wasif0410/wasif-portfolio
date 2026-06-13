@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type SvgProps = {
   className?: string;
 };
@@ -155,19 +153,4 @@ export function AboutHighlightGlyph({ icon, className }: { icon: AboutHighlightI
 export function AboutInterestGlyph({ icon, className }: { icon: AboutInterestIcon; className?: string }) {
   const Icon = interestIcons[icon];
   return <Icon className={className} />;
-}
-
-export function SketchFishDrawing({ className }: SvgProps) {
-  return (
-    <Image
-      src="/fish-svgrepo-com.svg"
-      alt=""
-      width={136}
-      height={136}
-      className={className}
-      aria-hidden="true"
-      draggable={false}
-      unoptimized
-    />
-  );
 }

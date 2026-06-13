@@ -2,8 +2,8 @@
 
 import { Mail, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GitHubIcon, LinkedInIcon } from "@/components/BrandIcons";
-import { ToonPill } from "@/components/ToonPill";
+import { GitHubIcon, LinkedInIcon } from "@/components/ui/BrandIcons";
+import { ToonPill } from "@/components/ui/ToonPill";
 import { links, profile } from "@/data/portfolio";
 
 const dockLinks = [

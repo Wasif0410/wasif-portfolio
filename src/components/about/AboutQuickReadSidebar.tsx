@@ -22,18 +22,14 @@ function getServerSnapshot() {
   return false;
 }
 
-type AboutDesktopSidebarProps = {
+type AboutQuickReadSidebarProps = {
   children: ReactNode;
 };
 
-export function AboutDesktopSidebar({ children }: AboutDesktopSidebarProps) {
+export function AboutQuickReadSidebar({ children }: AboutQuickReadSidebarProps) {
   const isDesktop = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   if (!isDesktop) return null;
 
-  return (
-    <aside className="about-section-right">
-      <div className="about-section-sidebar">{children}</div>
-    </aside>
-  );
+  return <div className="about-section-aside">{children}</div>;
 }

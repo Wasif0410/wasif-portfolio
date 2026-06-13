@@ -24,17 +24,17 @@ export const navSections = [
 ] as const;
 
 export const aboutContent = {
-  headline: "Building AI products that ship.",
-  headlineAccent: "ship.",
+  headline: "A Little About Me.",
+  headlineAccent: "Me.",
   paragraphs: [
-    "CS co-op student at Toronto Metropolitan University — focused on RAG, agents, and full-stack software that works outside the notebook.",
-    "I've interned across enterprise, healthcare, and ML teams, from vector search at Saige to GenAI evaluation at Dayforce.",
+    "I'm a 4th-year Computer Science student at Toronto Metropolitan University, currently working at Dayforce as a Product & AI Developer Intern.",
+    "Right now, I'm focused on experimenting with AI and using it to create meaningful things: tools, systems, and products that are useful beyond the demo.",
   ],
   interestsNote: "What I gravitate toward outside the day-to-day grind.",
   highlights: [
     { label: "Based in", value: "Toronto, Canada", icon: "location" as const },
-    { label: "Currently", value: "CS Co-op @ TMU", icon: "school" as const },
-    { label: "Latest role", value: "AI Dev Intern @ Dayforce", icon: "briefcase" as const },
+    { label: "Studying", value: "4th-year CS @ TMU", icon: "school" as const },
+    { label: "Current role", value: "Product & AI Dev @ Dayforce", icon: "briefcase" as const },
   ],
   interests: [
     { label: "Traveling", icon: "travel" as const },
@@ -71,12 +71,12 @@ export const writingEntries: WritingEntry[] = [
     tags: ["LLM Benchmark", "Front-End", "Model Comparison"],
   },
   {
-    titleLead: "What Survey Data Says",
-    titleRest: " About ChatGPT in the Classroom",
-    date: "2025",
+    titleLead: "ChatGPT in Academia",
+    titleRest: ": 2022 - 2026",
+    date: "2022 - 2026",
     excerpt:
-      "Students aren't a monolith — some treat ChatGPT like a tutor, others like a shortcut. A structured survey turned vague campus debate into charts you can actually argue with.",
-    tags: ["AI Ethics", "Data Study", "Education"],
+      "A look at how perspectives on ChatGPT in academia have changed from its release to now: from uncertainty around cheating and policy to a more practical conversation about learning, research, productivity, and responsible AI use.",
+    tags: ["AI in Education", "ChatGPT", "Academic Research"],
   },
 ];
 

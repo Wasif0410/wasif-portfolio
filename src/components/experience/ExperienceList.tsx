@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ExperienceCard } from "@/components/ExperienceCard";
+import { ExperienceCard } from "@/components/experience/ExperienceCard";
 
 type Experience = {
   year: string;

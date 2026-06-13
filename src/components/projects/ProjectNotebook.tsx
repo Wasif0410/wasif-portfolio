@@ -3,7 +3,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { GitHubIcon } from "@/components/BrandIcons";
+import { GitHubIcon } from "@/components/ui/BrandIcons";
 
 type Project = {
   title: string;
@@ -47,10 +47,10 @@ function ProjectPageContent({
             href={project.github}
             target="_blank"
             rel="noreferrer"
-            className="project-notebook-github"
+            className="project-notebook-github self-start w-fit"
             aria-label={`View ${project.title} on GitHub`}
           >
-            <GitHubIcon className="h-4 w-4" />
+            <GitHubIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             <span>GitHub</span>
           </a>
         ) : null}
@@ -254,7 +254,7 @@ export function ProjectNotebook({ notebooks }: ProjectNotebookProps) {
               ))}
             </div>
 
-            <div className="project-notebook-viewport">
+            <div className={`project-notebook-viewport${flip !== "idle" ? " is-flipping" : ""}`}>
               <div className="project-notebook-stack">
                 {total === 0 ? (
                   <div className="project-notebook-page project-notebook-page--static">

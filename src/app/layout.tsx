@@ -16,7 +16,7 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Wasif Saeed | AI & Software Developer",
+  title: "Wasif Saeed",
   description:
     "Portfolio for Wasif Saeed, an AI and software developer building intelligent systems, automation tools, and AI-powered products.",
 };
@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`h-full antialiased ${jetbrainsMono.variable} ${archivoBlack.variable}`}>
-      <body className="min-h-full w-full flex flex-col">{children}</body>
+      <body suppressHydrationWarning className="min-h-full w-full flex flex-col">
+        {children}
+      </body>
     </html>
   );
 }

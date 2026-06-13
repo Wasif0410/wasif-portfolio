@@ -39,9 +39,11 @@ export function ExperienceCard({
       </div>
 
       <div className="relative min-w-0 md:pl-2">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-5">
-          <h3 className="toon-heading text-4xl leading-none sm:text-5xl md:text-6xl">{company}</h3>
-          <span className="toon-tag shrink-0 px-3 py-1 font-mono text-[0.65rem] font-bold sm:text-xs">
+        <div className="flex items-start justify-between gap-3 sm:items-end sm:gap-5">
+          <h3 className="toon-heading min-w-0 flex-1 text-4xl leading-none sm:text-5xl md:text-6xl">
+            {company}
+          </h3>
+          <span className="experience-year toon-tag shrink-0 px-3 py-1 font-mono text-xs font-bold">
             {year}
           </span>
         </div>

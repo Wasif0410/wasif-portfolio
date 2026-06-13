@@ -2,7 +2,7 @@
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
-import { WritingEntryCard } from "@/components/WritingEntryCard";
+import { WritingEntryCard } from "@/components/writing/WritingEntryCard";
 import { writingEntries } from "@/data/portfolio";
 
 export function WritingSection() {
