@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo_Black, JetBrains_Mono } from "next/font/google";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -16,9 +17,59 @@ const archivoBlack = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Wasif Saeed",
-  description:
-    "Portfolio for Wasif Saeed, an AI and software developer building intelligent systems, automation tools, and AI-powered products.",
+  metadataBase: siteConfig.url,
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url.toString() }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  keywords: [...siteConfig.keywords],
+  referrer: "origin-when-cross-origin",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
+  openGraph: {
+    type: "profile",
+    locale: siteConfig.locale,
+    url: "/",
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Wasif Saeed portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ["/opengraph-image"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  category: "portfolio",
 };
 
 export default function RootLayout({

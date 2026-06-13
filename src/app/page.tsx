@@ -9,11 +9,49 @@ import { SiteNav } from "@/components/layout/SiteNav";
 import { SkillsSection } from "@/components/skills/SkillsSection";
 import { StatusDock } from "@/components/layout/StatusDock";
 import { WritingSection } from "@/components/writing/WritingSection";
-import { educationEntries, experiences, projectNotebooks, skillGroups } from "@/data/portfolio";
+import { educationEntries, experiences, links, profile, projectNotebooks, skillGroups } from "@/data/portfolio";
+import { siteConfig } from "@/lib/site";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  url: siteConfig.url.toString(),
+  jobTitle: profile.role,
+  email: `mailto:${profile.email}`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Toronto",
+    addressRegion: "Ontario",
+    addressCountry: "CA",
+  },
+  sameAs: [links.github, links.linkedin],
+  alumniOf: educationEntries.map((entry) => ({
+    "@type": "CollegeOrUniversity",
+    name: entry.school,
+  })),
+  worksFor: {
+    "@type": "Organization",
+    name: "Dayforce",
+  },
+  knowsAbout: [
+    "Artificial intelligence",
+    "Software development",
+    "Machine learning",
+    "Large language models",
+    "Retrieval augmented generation",
+    "Automation",
+    "Full-stack development",
+  ],
+};
 
 export default function Home() {
   return (
     <main className="toon-sketch-page site-shell min-h-screen w-full pb-20 text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <SiteNav />
       <Hero />
 
