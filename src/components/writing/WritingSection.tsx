@@ -1,14 +1,21 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, type PointerEvent, type TouchEvent } from "react";
 import { WritingEntryCard } from "@/components/writing/WritingEntryCard";
 import { writingEntries } from "@/data/portfolio";
 
+const MOBILE_WRITING_QUERY = "(max-width: 639px)";
+const SWIPE_THRESHOLD = 48;
+const VERTICAL_SCROLL_TOLERANCE = 36;
+
 export function WritingSection() {
   const regionRef = useRef<HTMLDivElement>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
   const [index, setIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
+  const [slideDirection, setSlideDirection] = useState<"next" | "prev">("next");
   const total = writingEntries.length;
 
   const canPrev = !showAll && index > 0;
@@ -16,18 +23,69 @@ export function WritingSection() {
 
   const goPrev = useCallback(() => {
     if (showAll) return;
+    setSlideDirection("prev");
     setIndex((current) => Math.max(0, current - 1));
   }, [showAll]);
 
   const goNext = useCallback(() => {
     if (showAll) return;
+    setSlideDirection("next");
     setIndex((current) => Math.min(total - 1, current + 1));
   }, [showAll, total]);
 
   const openEntry = useCallback((entryIndex: number) => {
+    setSlideDirection(entryIndex > index ? "next" : "prev");
     setIndex(entryIndex);
     setShowAll(false);
-  }, []);
+  }, [index]);
+
+  const handleTouchStart = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    if (showAll || !window.matchMedia(MOBILE_WRITING_QUERY).matches) return;
+
+    const touch = event.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  }, [showAll]);
+
+  const handleTouchEnd = useCallback((event: TouchEvent<HTMLDivElement>) => {
+    if (showAll || !touchStartRef.current || !window.matchMedia(MOBILE_WRITING_QUERY).matches) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = touch.clientY - touchStartRef.current.y;
+    touchStartRef.current = null;
+
+    if (Math.abs(deltaY) > VERTICAL_SCROLL_TOLERANCE || Math.abs(deltaX) < SWIPE_THRESHOLD) return;
+
+    if (deltaX < 0) {
+      goNext();
+      return;
+    }
+
+    goPrev();
+  }, [goNext, goPrev, showAll]);
+
+  const handlePointerDown = useCallback((event: PointerEvent<HTMLDivElement>) => {
+    if (showAll || !window.matchMedia(MOBILE_WRITING_QUERY).matches) return;
+
+    pointerStartRef.current = { x: event.clientX, y: event.clientY };
+  }, [showAll]);
+
+  const handlePointerUp = useCallback((event: PointerEvent<HTMLDivElement>) => {
+    if (showAll || !pointerStartRef.current || !window.matchMedia(MOBILE_WRITING_QUERY).matches) return;
+
+    const deltaX = event.clientX - pointerStartRef.current.x;
+    const deltaY = event.clientY - pointerStartRef.current.y;
+    pointerStartRef.current = null;
+
+    if (Math.abs(deltaY) > VERTICAL_SCROLL_TOLERANCE || Math.abs(deltaX) < SWIPE_THRESHOLD) return;
+
+    if (deltaX < 0) {
+      goNext();
+      return;
+    }
+
+    goPrev();
+  }, [goNext, goPrev, showAll]);
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -76,7 +134,13 @@ export function WritingSection() {
             ))}
           </div>
 
-          <div className="writing-carousel-viewport">
+          <div
+            className="writing-carousel-viewport"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onPointerDown={handlePointerDown}
+            onPointerUp={handlePointerUp}
+          >
             {showAll ? (
               <ul className="writing-all-list">
                 {writingEntries.map((entry, entryIndex) => (
@@ -106,7 +170,7 @@ export function WritingSection() {
                 ))}
               </ul>
             ) : (
-              <div key={index} className="writing-carousel-slide">
+              <div key={index} className={`writing-carousel-slide writing-carousel-slide--${slideDirection}`}>
                 <WritingEntryCard entry={writingEntries[index]} index={index} />
               </div>
             )}
