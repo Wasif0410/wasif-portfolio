@@ -24,6 +24,8 @@ type ProjectNotebookProps = {
   notebooks: ProjectNotebookCategory[];
 };
 
+const MOBILE_PROJECT_QUERY = "(max-width: 639px)";
+
 function ProjectPageContent({
   project,
   pageNumber,
@@ -137,6 +139,11 @@ export function ProjectNotebook({ notebooks }: ProjectNotebookProps) {
       if (flip !== "idle" || total === 0) return;
       if (direction === "next" && pageIndex >= total - 1) return;
       if (direction === "prev" && pageIndex <= 0) return;
+
+      if (window.matchMedia(MOBILE_PROJECT_QUERY).matches) {
+        setPageIndex((current) => (direction === "next" ? current + 1 : current - 1));
+        return;
+      }
 
       flipDirectionRef.current = direction;
       window.requestAnimationFrame(() => {

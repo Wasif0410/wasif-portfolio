@@ -2178,6 +2178,18 @@ body {
   }
 }
 
+@keyframes writing-slide-in-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .writing-section svg,
 .writing-carousel svg {
   display: block;
@@ -2350,23 +2362,33 @@ body {
 
   .writing-carousel-viewport {
     height: auto;
-    min-height: 0;
+    min-height: 38.25rem;
     max-height: none;
     overflow: visible;
     padding: 1.5rem 1.35rem 1.55rem;
+    touch-action: pan-y;
   }
 
   .writing-carousel-slide {
-    height: auto;
-    min-height: 0;
+    height: 100%;
+    min-height: calc(38.25rem - 3.05rem);
     overflow: visible;
+  }
+
+  .writing-carousel-slide--prev {
+    animation-name: writing-slide-in-prev;
+  }
+
+  .writing-all-list {
+    min-height: calc(38.25rem - 3.05rem);
+    justify-content: flex-start;
   }
 
   .writing-entry-card {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
-    height: auto;
-    min-height: 0;
+    height: 100%;
+    min-height: calc(38.25rem - 3.05rem);
     overflow: visible;
     justify-items: center;
     text-align: center;
