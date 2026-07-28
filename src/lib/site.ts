@@ -1,4 +1,4 @@
-export const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://wasif-portfolio-ebon.vercel.app");
+export const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://wasifsaeed.com");
 
 export const siteConfig = {
   name: "Wasif Saeed",
