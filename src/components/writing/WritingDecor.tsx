@@ -1,6 +1,14 @@
+import { GitHubIcon, MediumIcon } from "@/components/ui/BrandIcons";
+import type { WritingLink } from "@/data/portfolio";
+
 type SvgProps = {
   className?: string;
 };
+
+const writingLinkIcons = {
+  github: GitHubIcon,
+  medium: MediumIcon,
+} as const;
 
 export function SketchSparkle({ className }: SvgProps) {
   return (
@@ -76,6 +84,29 @@ export function WritingReadLink({ href }: { href: string }) {
         Read <span aria-hidden="true">&rarr;</span>
       </span>
     </a>
+  );
+}
+
+export function WritingLinks({ links }: { links: WritingLink[] }) {
+  return (
+    <div className="writing-link-group">
+      {links.map((link) => {
+        const Icon = writingLinkIcons[link.icon];
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+            className="writing-link-chip"
+            aria-label={`Read "Where AI Agents Break" on ${link.label}`}
+          >
+            <Icon className="writing-link-chip-icon" />
+            <span className="writing-link-chip-label">{link.label}</span>
+          </a>
+        );
+      })}
+    </div>
   );
 }
 

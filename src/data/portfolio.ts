@@ -52,6 +52,12 @@ export const aboutContent = {
 export type AboutHighlight = (typeof aboutContent.highlights)[number];
 export type AboutInterest = (typeof aboutContent.interests)[number];
 
+export type WritingLink = {
+  label: string;
+  href: string;
+  icon: "github" | "medium";
+};
+
 export type WritingEntry = {
   titleLead: string;
   titleRest: string;
@@ -59,9 +65,26 @@ export type WritingEntry = {
   excerpt: string;
   tags: string[];
   href?: string;
+  links?: WritingLink[];
 };
 
 export const writingEntries: WritingEntry[] = [
+  {
+    titleLead: "Where AI Agents",
+    titleRest: " Break",
+    date: "2026",
+    excerpt:
+      "An independent study testing a frontier agent (Gemini 3.5 Flash) on five realistic SaaS revenue-ops tasks — where it passed just 2 of 15 trials, nailing ~95% of each job before breaking on the final 5% that actually matters.",
+    tags: ["AI Agents", "Agent Benchmarking", "RevOps"],
+    links: [
+      { label: "GitHub", href: "https://github.com/Wasif0410/Where-AI-Agents-Break", icon: "github" },
+      {
+        label: "Medium",
+        href: "https://medium.com/@wasifsaeed0410/where-ai-agents-break-0337a7507a7e",
+        icon: "medium",
+      },
+    ],
+  },
   {
     titleLead: "Frontier Coding Agents",
     titleRest: ": 3D Front-End Test",
