@@ -159,7 +159,7 @@ export function WritingSection() {
                         <span className="writing-all-meta">
                           {entry.date}
                           <span aria-hidden="true"> · </span>
-                          {entry.href ? "Published" : "Coming Soon"}
+                          {entry.href || entry.links?.length ? "Published" : "Coming Soon"}
                         </span>
                       </span>
                       <span className="writing-all-arrow" aria-hidden="true">

@@ -2,6 +2,7 @@ import {
   ComingSoonStamp,
   SketchIndexUnderline,
   SketchTitleUnderline,
+  WritingLinks,
   WritingReadLink,
 } from "@/components/writing/WritingDecor";
 import type { WritingEntry } from "@/data/portfolio";
@@ -21,10 +22,16 @@ export function WritingEntryCard({ entry, index }: WritingEntryCardProps) {
         <SketchIndexUnderline className="writing-entry-index-line" />
       </div>
 
-      <div className={`writing-entry-panel min-w-0 ${entry.href ? "" : "writing-entry-panel--soon"}`}>
+      <div className={`writing-entry-panel min-w-0 ${entry.href || entry.links?.length ? "" : "writing-entry-panel--soon"}`}>
         <div className="writing-entry-top flex items-start justify-between gap-3">
           <p className="toon-label text-xs sm:text-sm">{entry.date}</p>
-          {entry.href ? <WritingReadLink href={entry.href} /> : <ComingSoonStamp />}
+          {entry.links?.length ? (
+            <WritingLinks links={entry.links} />
+          ) : entry.href ? (
+            <WritingReadLink href={entry.href} />
+          ) : (
+            <ComingSoonStamp />
+          )}
         </div>
 
         <h3 className="toon-heading mt-2 max-w-2xl text-xl leading-tight sm:mt-3 sm:text-2xl md:text-3xl">

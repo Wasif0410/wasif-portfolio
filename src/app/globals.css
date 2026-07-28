@@ -2201,6 +2201,13 @@ body {
   color: rgb(0 0 0 / 0.22);
 }
 
+.writing-entry-panel {
+  border: 2px dashed rgb(0 0 0 / 0.2);
+  border-radius: 0.85rem;
+  padding: 1rem 1.05rem 1.1rem;
+  background: rgb(255 255 255 / 0.45);
+}
+
 .writing-entry-panel--soon {
   border: 2px dashed rgb(0 0 0 / 0.2);
   border-radius: 0.85rem;
@@ -2257,6 +2264,58 @@ body {
 .writing-read-link:focus-visible {
   outline: 2px solid #000;
   outline-offset: 3px;
+}
+
+.writing-link-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.writing-link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid #000;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 rgb(0 0 0 / 0.45);
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+.writing-link-chip:hover {
+  background: #222;
+  color: #fff;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.writing-link-chip:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+.writing-link-chip-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
+.writing-link-chip-label {
+  line-height: 1;
 }
 
 .writing-soon-stamp {
@@ -2426,6 +2485,15 @@ body {
 
   .writing-entry-top .toon-label {
     margin-bottom: 0.15rem;
+  }
+
+  .writing-link-group {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.4rem;
   }
 
   .writing-soon-stamp {
