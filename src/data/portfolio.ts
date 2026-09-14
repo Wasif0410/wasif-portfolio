@@ -119,6 +119,20 @@ export const experiences = [
     ],
   },
   {
+    year: "Aug 2026 - Present",
+    company: "Toronto Metropolitan University",
+    logo: "/company-logos/toronto-metropolitan-university.png",
+    role: "Undergraduate Researcher",
+    description:
+      "Building and fine-tuning a custom 150M-parameter small language model for collaborative programming dialogue, and designing an AI evaluation pipeline for collaboration-state analysis.",
+    bullets: [
+      "150M-param SLM training",
+      "Fine-tuning & evaluation",
+      "Collaboration-state analysis",
+      "Benchmarking vs frontier LLMs",
+    ],
+  },
+  {
     year: "Jan - Sep 2026",
     company: "Dayforce",
     logo: "/company-logos/dayforce.png",
