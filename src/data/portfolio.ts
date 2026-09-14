@@ -105,7 +105,21 @@ export const writingEntries: WritingEntry[] = [
 
 export const experiences = [
   {
-    year: "2026",
+    year: "Sep 2026 - Present",
+    company: "Achievers",
+    logo: "/company-logos/achievers.png",
+    role: "Software Engineering Co-op",
+    description:
+      "Building Go and Python backend microservices with gRPC APIs and event-driven Pub/Sub workflows, alongside React microfrontends containerized and deployed on GCP.",
+    bullets: [
+      "Go & Python microservices",
+      "gRPC APIs & Pub/Sub events",
+      "React microfrontends",
+      "Docker & Kubernetes on GCP",
+    ],
+  },
+  {
+    year: "Jan - Sep 2026",
     company: "Dayforce",
     logo: "/company-logos/dayforce.png",
     role: "Product & AI Developer Intern",
